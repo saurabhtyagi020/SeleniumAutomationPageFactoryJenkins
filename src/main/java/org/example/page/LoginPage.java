@@ -32,4 +32,13 @@ public class LoginPage {
         password.sendKeys(pwd);
         loginBtn.click();
     }
+
+    public void login_with_invalid_Cred(String user,String pwd) {
+        getDriver().get(PropertiesReader.readKey("url"));
+        userName.sendKeys(user);
+        password.sendKeys(pwd);
+        loginBtn.click();
+    }
+
+
 }
