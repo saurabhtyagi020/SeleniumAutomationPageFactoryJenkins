@@ -4,6 +4,7 @@ import org.example.utils.PropertiesReader;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverManager {
@@ -25,9 +26,12 @@ public class DriverManager {
         switch(browser)
         {
             case "edge":
-                driver = new EdgeDriver();
-                driver.manage().window().maximize();
-                break;
+                EdgeOptions options = new EdgeOptions();
+                options.addArguments("--headless=new"); // or "--headless" for older versions
+                options.addArguments("--disable-gpu");
+                options.addArguments("--window-size=1920,1080");
+
+                driver = new EdgeDriver(options);
 
             case "chrome":
                 driver = new ChromeDriver();
