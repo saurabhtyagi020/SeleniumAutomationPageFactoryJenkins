@@ -39,7 +39,7 @@ public class DriverManager {
                 driver.manage().window().maximize();
                 break;
             default:
-                System.out.println("Browser not supported!!");
+                System.out.println("Browser not supported!!!");
         }
     }
 
